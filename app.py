@@ -11,6 +11,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def search():
+    return render_template('search.html')
+
+@app.route('/results')
+def results():
     name = request.args.get('name')
     subject = request.args.get('subject')
     grade = request.args.get('grade')
@@ -28,12 +32,10 @@ def search():
             'description': tutor['description']
         }
 
-    return render_template('search.html')
-
-
-@app.route('/results')
-def results():
-    return render_template('results.html')
+        return tutors
+      
+    output = get_tutor(name, subject, grade)
+    return render_template('results.html', name=output['name'], price=output['price'], phone=output['phone'], description=output['description'])
 
 
 @app.route('/job-posting')
