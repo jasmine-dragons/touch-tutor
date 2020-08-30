@@ -18,6 +18,17 @@ app = Flask(__name__)
 def search():
     return render_template('search.html')
 
+@app.route('/student_landing')
+def student_landing():
+    StudentName = request.args.get('name')
+    return render_template('student_landing.html', Name = StudentName)
+
+@app.route('/tutor_landing')
+def tutor_landing():
+    TutorName = request.args.get('name')
+    return render_template('tutor_landing.html', Name = TutorName)
+
+
 
 @app.route('/results')
 def results():
@@ -94,6 +105,15 @@ def getValuesTutor():
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/login_tutor')
+def login_tutor():
+    return render_template('login_tutor.html')
+
+@app.route('/login_student')
+def login_student():
+    return render_template('login_student.html')
+
 
 
 if __name__ == '__main__':
