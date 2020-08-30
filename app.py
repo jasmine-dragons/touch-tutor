@@ -7,7 +7,6 @@ import dns
 import json
 from bson.objectid import ObjectId
 from bson.json_util import dumps, loads
-import jsonify
 
 
 load_dotenv()
@@ -31,7 +30,7 @@ def results():
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['touch-tutor']
         my_col = my_db['postings']
-        tutor = my_col.find({'subject': str(subject)})
+        tutor = my_col.find({'subject': str(subject), 'grade': int(grade)})
         return tutor
 
     output = get_tutor(subject, grade)
