@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import pymongo
 import dns
+import json
 
 load_dotenv()
 URI = os.getenv('MONGO_URI')
@@ -21,26 +22,16 @@ def results():
     grade = request.args.get('grade')
     location = request.args.get('location')
 
-    def get_tutor(name, subject, grade):
+    def get_tutor(subject, grade):
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['touch-tutors']
         my_col = my_db['tutors']
+        tutor = my_col.find_one({'subject': str(subject)}, {'grade': str(grade)})
+        return tutor
 
-        tutor = my_col.find_one({'subject': str(subject)}, {
-                                'grade': str(grade)})
-
-
-        tutors = {
-            'name': tutor['name'],
-            'price': tutor['price'],
-            'phone': tutor['phone'],
-            'description': tutor['description']
-        }
-
-        return tutors
-
-    output = get_tutor(name, subject, grade)
-    return render_template('results.html', name=output['name'], price=output['price'], phone=output['phone'], description=output['description'])
+    output = get_tutor(subject, grade)
+    name = output['names']
+    return render_template('results.html', name=name)
 
 
 @app.route('/job-posting')
