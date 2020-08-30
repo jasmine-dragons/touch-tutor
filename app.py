@@ -8,6 +8,7 @@ load_dotenv()
 URI = os.getenv('MONGO_URI')
 app = Flask(__name__)
 
+
 @app.route('/')
 def search():
     return render_template('search.html')
@@ -32,9 +33,15 @@ def results():
         }
 
         return tutors
-
+      
     output = get_tutor(name, subject, grade)
     return render_template('results.html', name=output['name'], price=output['price'], phone=output['phone'], description=output['description'])
+
+
+@app.route('/job-posting')
+def job():
+    return render_template('job_post.html')
+
 
 if __name__ == '__main__':
     app.run()
