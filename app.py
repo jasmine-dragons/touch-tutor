@@ -36,7 +36,7 @@ def results():
     output = get_tutor(subject, grade)
 
     #tutor_name = loads(dumps(list(output)))
-    return render_template('results.html', name=output[0]["name"])
+    return render_template('results.html', name=output[0]['name'], price=output[0]['price'], description=output[0]['description'], phone=output[0]['phone'])
 
 
 
