@@ -53,7 +53,18 @@ def results():
 
 @app.route('/job-posting')
 def job():
+    InputSubject = request.args.get('input-subject')
+    InputGrade = request.args.get('input-grade')
+    UserPrice = request.args.get('user-price')
+    UserDescription = request.args.get('user-description')
     return render_template('job_post.html')
+
+    values = {'subject' : InputSubject, 'grade' : InputGrade, 'price' : UserPrice, 'description' : UserDescription}
+
+    my_client = pymongo.MongoClient('mongodb+srv://tutor:applebanana@cluster0.5tibu.mongodb.net/touch-tutor?retryWrites=true&w=majority')
+    my_db = my_client['touch-tutor']
+    my_col = my_db['postings']
+    my_col.insert_one(values)
 
 
 @app.route('/about')
