@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, session, redirect
+from flask import Flask, render_template, request, url_for, session, redirect, jsonify
 from dotenv import load_dotenv
 import os
 import pymongo
@@ -31,13 +31,8 @@ def results():
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['touch-tutor']
         my_col = my_db['postings']
-        tutor = my_col.find({'subject': str(subject)})
-        return tutor
 
-    output = get_tutor(subject, grade)
 
-    #tutor_name = loads(dumps(list(output)))
-    return render_template('results.html', name=output[0]["name"])
 
 
 @app.route('/job-posting')
