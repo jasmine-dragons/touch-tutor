@@ -5,6 +5,8 @@ import pymongo
 import bcrypt
 import dns
 import json
+import bson
+from bson.objectid import ObjectId
 
 load_dotenv()
 URI = os.getenv('MONGO_URI')
@@ -75,17 +77,14 @@ def getValuesTutor():
     Phone = request.args.get('phone')
     Description = request.args.get('description')
 
-    values = [
-        Name,
-        Price,
-        Phone,
-        Description
-    ]
+    values = {'Name' : Name, 'Price' : Price, 'Phone' : Phone, 'Description' : Description}
+
+
 
     my_client = pymongo.MongoClient('mongodb+srv://tutor:applebanana@cluster0.5tibu.mongodb.net/touch-tutor?retryWrites=true&w=majority')
     my_db = my_client['touch-tutor']
     my_col = my_db['tutors']
-    my_col.insert_one({Name, Price, Phone, Description})
+    my_col.insert_one(values)
 
     return render_template('/search.html')
 
