@@ -28,48 +28,41 @@
     <div class="left rounded small"><a href="{{ url_for('search') }}"><img src="static/assets/img/logo.png" height="50"></a></div>
     <div class="right">
       <ul class="menu">
-
-        <li><a href="">Contact Us</a></li>
         <li><a href="/job-posting">Create posting</a></li>
       </ul>
-      <a class="button blue rounded small" href="">Sign Up</a>
+      <a class="button blue rounded small" href="">sign up</a>
     </div>
   </div>
 </nav>
 
 <section class="slide fade-6 kenBurns">
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-12-12">
-          <div class="fix-3-12">
-            <svg height="77" class="wide ae-1 fromCenter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+    <div class="content">
+      <div class="container">
+      
+        <div class="wrap">
+          <div class="fix-12-12">
+            <div class="jumbotron">
+                <h1>
+                    Create a Job Posting!
+                </h1> <br/>
+              </div>
+            <form class="slides-form" action="{{ url_for('results') }}">
+                
+              <input type="name" class="rounded input-9 ae-5 fromCenter" name="input-subject" placeholder="Which Subject?"/>
+              <input type="name" class="rounded input-9 ae-6 fromCenter" name="input-grade" placeholder="Which Grade Level?"/></br>
+              
+              <input type="name" class="rounded input-9 ae-6 fromCenter" name="user-price" placeholder="Rate (Per Hour)?"/>
+              <input type="name" class="rounded input-9 ae-6 fromCenter" name="user-description" placeholder="Description (Meeting location, etc)"/></br><br/>
+              <button type="submit" class="button blue rounded button-9 ae-7 fromCenter" name="button">Post!</button>
+            </form>
+            
           </div>
-          {{name}}
+  
         </div>
       </div>
     </div>
-  </div>
-  <div class="background" style="background-image:url(static/assets/img/background/bg.jpg)"></div>
-</section>
-
-<nav class="panel bottom forceMobileView">
-  <div class="sections desktop">
-    <div class="left"></div>
-    <div class="center">
-      <ul class="menu uppercase">'
-        <li><a href="">About</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">Tutors</a></li>
-      </ul>
-    </div>
-    <div class="right"><span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span></div>
-  </div>
-  <div class="sections compact hidden">
-    <div class="right"><span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span></div>
-  </div>
-</nav>
-
+    <div class="background" style="background-image:url(static/assets/img/background/bg.jpg)"></div>
+  </section>
 
 <!-- jQuery 3.5.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
