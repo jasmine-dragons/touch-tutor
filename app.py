@@ -62,9 +62,10 @@ def insert_post():
     InputGrade = request.args.get('input-grade')
     UserPrice = request.args.get('user-price')
     UserDescription = str(request.args.get('user-description'))
+    PhoneNumber = request.args.get('phone-number')
     
 
-    values = {'subject' : InputSubject, 'grade' : InputGrade, 'price' : UserPrice, 'description' : UserDescription, 'name' : Name}
+    values = {'subject' : InputSubject, 'grade' : InputGrade, 'price' : UserPrice, 'description' : UserDescription, 'name' : Name, 'phone' : PhoneNumber}
 
     my_client = pymongo.MongoClient(URI)
     my_db = my_client['touch-tutor']
