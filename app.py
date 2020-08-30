@@ -10,6 +10,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def search():
+    name = request.args.get('name')
+    subject = request.args.get('subject')
+    grade = request.args.get('grade')
+    location =
+
+    
     return render_template('search.html')
 
 @app.route('/results')
