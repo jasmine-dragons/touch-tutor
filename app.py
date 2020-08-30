@@ -100,7 +100,9 @@ def getValuesTutor():
     my_col = my_db['tutors']
     my_col.insert_one(values)
 
-    return render_template('/search.html')
+
+    TutorName = request.args.get('name')
+    return render_template('/tutor_landing.html', Name = TutorName)
 
 @app.route('/login')
 def login():
