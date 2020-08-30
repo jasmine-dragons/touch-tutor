@@ -14,7 +14,6 @@ def search():
     name = request.args.get('name')
     subject = request.args.get('subject')
     grade = request.args.get('grade')
-    location =
 
     
     return render_template('search.html')
@@ -25,18 +24,17 @@ def results():
 
 
 @app.route('/signup')
-def results():
+def signup():
     return render_template('signup.html')
 
 @app.route('/signup_tutor', methods=['POST', 'GET'])
-def results():
+def signup_tutor():
     return render_template('signup_tutor.html')
 
 @app.route('/signup_student', methods=['POST', 'GET'])
-def results():
+def signup_student():
     return render_template('signup_student.html')
 
-@app.route('/signup')
 
 
 
