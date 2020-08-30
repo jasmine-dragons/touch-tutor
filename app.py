@@ -5,8 +5,9 @@ import pymongo
 import bcrypt
 import dns
 import json
-import bson
 from bson.objectid import ObjectId
+from bson.json_util import dumps, loads
+
 
 load_dotenv()
 URI = os.getenv('MONGO_URI')
@@ -29,12 +30,12 @@ def results():
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['touch-tutors']
         my_col = my_db['tutors']
-        tutor = my_col.find_one({'subject': str(subject)}, {'grade': str(grade)})
+        tutor = my_col.find({'subject': str(subject)}, {'grade': int(grade)})
         return tutor
 
     output = get_tutor(subject, grade)
-    name = output['names']
-    return render_template('results.html', name=name)
+    tutor_name = loads(dumps(list(output)))
+    return render_template('results.html', name=tutor_name)
 
 
 @app.route('/job-posting')
