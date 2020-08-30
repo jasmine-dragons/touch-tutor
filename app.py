@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 import pymongo
 import dns
+import json
 
 load_dotenv()
 URI = os.getenv('MONGO_URI')
@@ -19,10 +20,11 @@ def results():
     subject = request.args.get('subject')
     grade = request.args.get('grade')
 
-    def get_tutor(name, subject, grade):
+    def get_tutor(subject, grade):
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['touch-tutors']
         my_col = my_db['tutors']
+<<<<<<< Updated upstream
         tutor = my_col.find_one({'subject': str(subject)}, {'grade': str(grade)})
 
         tutors = {
@@ -36,6 +38,14 @@ def results():
       
     output = get_tutor(name, subject, grade)
     return render_template('results.html', name=output['name'], price=output['price'], phone=output['phone'], description=output['description'])
+=======
+        tutor = my_col.find({'subject': str(subject)}, {'grade': str(grade)})
+        return tutor
+
+    output = get_tutor(subject, grade)
+    name = output['name']
+    return render_template('results.html', name=name)
+>>>>>>> Stashed changes
 
 
 @app.route('/job-posting')
