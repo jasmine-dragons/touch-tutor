@@ -44,11 +44,12 @@
           <div class="fix-3-12">
             <svg height="77" class="wide ae-1 fromCenter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
           </div>
-          <form class="slides-form" action="{{ url_for('results') }}">
+          <form class="slides-form" action="/register_tutor}">
             <input type="name" class="rounded input-9 ae-4 fromCenter" name="name" placeholder="Name"/></br>
-            <input type="name" class="rounded input-9 ae-5 fromCenter" name="subject" placeholder="Subject"/></br>
-            <input type="name" class="rounded input-9 ae-6 fromCenter" name="grade" placeholder="Grade"/></br></br>
-            <button type="submit" class="button blue rounded button-9 ae-7 fromCenter" name="button">Get Started</button>
+            <input type="name" class="rounded input-9 ae-5 fromCenter" name="price" placeholder="Hourly Rate"/></br>
+            <input type="name" class="rounded input-9 ae-6 fromCenter" name="phone" placeholder="Phone Number"/></br></br>
+            <textarea type="text" class="rounded input-9 ae-6 fromCenter" name="description" placeholder="Description of Your Service"/></textarea></br></br>
+            <input type="submit" class="button blue rounded button-9 ae-7 fromCenter" name="button">
           </form></br>
           <p class="large ae-3"><span class="opacity-8">Are you a student? Click <a href="/signup_student"><b>here</b></a></span></p>
         </div>
