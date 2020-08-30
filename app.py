@@ -13,6 +13,7 @@ app = Flask(__name__)
 def search():
     return render_template('search.html')
 
+
 @app.route('/results')
 def results():
     name = request.args.get('name')
@@ -23,7 +24,8 @@ def results():
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['touch-tutors']
         my_col = my_db['tutors']
-        tutor = my_col.find_one({'subject': str(subject)}, {'grade': str(grade)})
+        tutor = my_col.find_one({'subject': str(subject)}, {
+                                'grade': str(grade)})
 
         tutors = {
             'name': tutor['name'],
@@ -33,7 +35,7 @@ def results():
         }
 
         return tutors
-      
+
     output = get_tutor(name, subject, grade)
     return render_template('results.html', name=output['name'], price=output['price'], phone=output['phone'], description=output['description'])
 
@@ -41,6 +43,21 @@ def results():
 @app.route('/job-posting')
 def job():
     return render_template('job_post.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/ourtutors')
+def ourtut():
+    return render_template('ourTutors.html')
 
 
 if __name__ == '__main__':

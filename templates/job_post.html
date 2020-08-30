@@ -28,7 +28,6 @@
     <div class="left rounded small"><a href="{{ url_for('search') }}"><img src="static/assets/img/logo.png" height="50"></a></div>
     <div class="right">
       <ul class="menu">
-        <li><a href="">contact us</a></li>
         <li><a href="/job-posting">Create posting</a></li>
       </ul>
       <a class="button blue rounded small" href="">sign up</a>
@@ -49,12 +48,11 @@
               </div>
             <form class="slides-form" action="{{ url_for('results') }}">
                 
-              <input type="name" class="rounded input-9 ae-5 fromCenter" name="user-subjects" placeholder="Which Subject?"/>
-              <input type="name" class="rounded input-9 ae-6 fromCenter" name="user-price" placeholder="Which Grade Level?"/></br>
+              <input type="name" class="rounded input-9 ae-5 fromCenter" name="input-subject" placeholder="Which Subject?"/>
+              <input type="name" class="rounded input-9 ae-6 fromCenter" name="input-grade" placeholder="Which Grade Level?"/></br>
               
               <input type="name" class="rounded input-9 ae-6 fromCenter" name="user-price" placeholder="Rate (Per Hour)?"/>
-              <input type="name" class="rounded input-9 ae-6 fromCenter" name="user-meet" placeholder="Where Would You Like to Meet?"/></br><br/>
-              <input type="name" class="rounded input-9 ae-6 fromCenter" name="user-description" placeholder="Describe Yourself Briefly"/></br><br/>
+              <input type="name" class="rounded input-9 ae-6 fromCenter" name="user-description" placeholder="Description (Meeting location, etc)"/></br><br/>
               <button type="submit" class="button blue rounded button-9 ae-7 fromCenter" name="button">Post!</button>
             </form>
             
