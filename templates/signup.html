@@ -28,8 +28,8 @@
     <div class="left rounded small"><a href="{{ url_for('search') }}"><img src="static/assets/img/logo.png" height="50"></a></div>
     <div class="right">
       <ul class="menu">
-
-        <li><a href="/job-posting">Create posting</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Tutors</a></li>
       </ul>
       <a class="button blue rounded small" href="/signup">Sign Up</a>
     </div>
@@ -45,14 +45,17 @@
             <svg height="77" class="wide ae-1 fromCenter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
           </div>
           <form class="slides-form" action="{{ url_for('results') }}">
-            <input type="name" class="rounded input-9 ae-4 fromCenter" name="name" placeholder="Name"/>
-            <input type="name" class="rounded input-9 ae-5 fromCenter" name="subject" placeholder="Subject"/></br>
-            <input type="name" class="rounded input-9 ae-7 fromCenter" name="location" placeholder="Location"/>
-            <input type="name" class="rounded input-9 ae-6 fromCenter" name="grade" placeholder="Grade"/></br></br>
-            <button type="submit" class="button blue rounded button-9 ae-8 fromCenter" name="button">Get Started</button>
+            <a href="/signup_tutor">
+                <button type="button" class="button blue rounded button-9 ae-7 fromCenter" name="button">I'm a Tutor</button>
+            </a>
+            <a href="/signup_student">
+                <button type="button" class="button blue rounded button-9 ae-7 fromCenter" name="button">I'm a Student</button>
+            </a>
+            
           </form></br>
-          <p class="large ae-3"><span class="opacity-8">Are you a tutor? Click <a href="#"><b>here</b></a></span></p>
+          <p class="large ae-3"><span class="opacity-8">Want to login? Click <a href="#"><b>here</b></a></span></p>
         </div>
+
       </div>
     </div>
   </div>
@@ -64,9 +67,9 @@
     <div class="left"></div>
     <div class="center">
       <ul class="menu uppercase">'
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/ourtutors">Our Tutors</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Tutors</a></li>
       </ul>
     </div>
     <div class="right"><span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span></div>
