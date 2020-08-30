@@ -47,7 +47,9 @@
                     Create a Job Posting!
                 </h1> <br/>
               </div>
-            <form class="slides-form" action="{{ url_for('results') }}">
+            <form class="slides-form" action="/insert-post">
+
+              <input type="name" class="rounded input-9 ae-5 fromCenter" name="name" placeholder="Name?"/></br>
 
               <input type="name" class="rounded input-9 ae-5 fromCenter" name="input-subject" placeholder="Which Subject?"/>
               <input type="name" class="rounded input-9 ae-6 fromCenter" name="input-grade" placeholder="Which Grade Level?"/></br>

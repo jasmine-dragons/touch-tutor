@@ -53,18 +53,25 @@ def results():
 
 @app.route('/job-posting')
 def job():
-    InputSubject = request.args.get('input-subject')
+    return render_template('job_post.html')
+    
+@app.route('/insert-post')
+def insert_post():
+    Name = request.args.get('name')
+    InputSubject = str(request.args.get('input-subject'))
     InputGrade = request.args.get('input-grade')
     UserPrice = request.args.get('user-price')
-    UserDescription = request.args.get('user-description')
-    return render_template('job_post.html')
+    UserDescription = str(request.args.get('user-description'))
+    
 
-    values = {'subject' : InputSubject, 'grade' : InputGrade, 'price' : UserPrice, 'description' : UserDescription}
+    values = {'subject' : InputSubject, 'grade' : InputGrade, 'price' : UserPrice, 'description' : UserDescription, 'name' : Name}
 
-    my_client = pymongo.MongoClient('mongodb+srv://tutor:applebanana@cluster0.5tibu.mongodb.net/touch-tutor?retryWrites=true&w=majority')
+    my_client = pymongo.MongoClient(URI)
     my_db = my_client['touch-tutor']
     my_col = my_db['postings']
     my_col.insert_one(values)
+
+    return render_template('search.html')
 
 
 @app.route('/about')
@@ -106,7 +113,7 @@ def getValuesTutor():
 
 
 
-    my_client = pymongo.MongoClient('mongodb+srv://tutor:applebanana@cluster0.5tibu.mongodb.net/touch-tutor?retryWrites=true&w=majority')
+    my_client = pymongo.MongoClient(URI)
     my_db = my_client['touch-tutor']
     my_col = my_db['tutors']
     my_col.insert_one(values)
