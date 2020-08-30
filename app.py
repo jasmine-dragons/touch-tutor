@@ -7,6 +7,7 @@ import dns
 import json
 from bson.objectid import ObjectId
 from bson.json_util import dumps, loads
+import jsonify
 
 
 load_dotenv()
@@ -28,14 +29,15 @@ def results():
 
     def get_tutor(subject, grade):
         my_client = pymongo.MongoClient(URI)
-        my_db = my_client['touch-tutors']
-        my_col = my_db['tutors']
-        tutor = my_col.find({'subject': str(subject)}, {'grade': int(grade)})
+        my_db = my_client['touch-tutor']
+        my_col = my_db['postings']
+        tutor = my_col.find({'subject': str(subject)})
         return tutor
 
     output = get_tutor(subject, grade)
-    tutor_name = loads(dumps(list(output)))
-    return render_template('results.html', name=tutor_name)
+
+    #tutor_name = loads(dumps(list(output)))
+    return render_template('results.html', name=output[0]["name"])
 
 
 @app.route('/job-posting')
