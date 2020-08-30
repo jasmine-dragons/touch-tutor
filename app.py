@@ -5,10 +5,12 @@ import pymongo
 import dns
 
 load_dotenv()
+URI = os.getenv('MONGO_URI')
 app = Flask(__name__)
 
 @app.route('/')
 def search():
+    
     return render_template('search.html')
 
 
