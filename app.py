@@ -18,12 +18,13 @@ def results():
     name = request.args.get('name')
     subject = request.args.get('subject')
     grade = request.args.get('grade')
+    location = request.args.get('location')
 
     def get_tutor(name, subject, grade):
         my_client = pymongo.MongoClient(URI)
         my_db = my_client['touch-tutors']
         my_col = my_db['tutors']
-        tutor = my_col.find_one({'subject': str(subject)}, {'grade': str(grade)})
+        tutor = my_col.find({'subject': str(subject)}, {'grade': str(grade)})
 
         tutors = {
             'name': tutor['name'],
@@ -33,7 +34,7 @@ def results():
         }
 
         return tutors
-      
+
     output = get_tutor(name, subject, grade)
     return render_template('results.html', name=output['name'], price=output['price'], phone=output['phone'], description=output['description'])
 
