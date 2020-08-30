@@ -28,10 +28,10 @@
     <div class="left rounded small"><a href="{{ url_for('search') }}"><img src="static/assets/img/logo.png" height="50"></a></div>
     <div class="right">
       <ul class="menu">
-        <li><a href="">contact us</a></li>
-        <li><a href="">tutors</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Tutors</a></li>
       </ul>
-      <a class="button blue rounded small" href="">sign up</a>
+      <a class="button blue rounded small" href="">Sign Up</a>
     </div>
   </div>
 </nav>
@@ -44,15 +44,12 @@
           <div class="fix-3-12">
             <svg height="77" class="wide ae-1 fromCenter"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
           </div>
-          <div class="button play small white popupTrigger ae-2 fromCenter margin-top-4 margin-bottom-4" data-popup-id="9">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#play"></use></svg>
-          </div>
           <form class="slides-form" action="{{ url_for('results') }}">
-            <input type="name" class="rounded input-9 ae-4 fromCenter" name="user-email" placeholder="Name"/></br>
-            <input type="name" class="rounded input-9 ae-5 fromCenter" name="user-password" placeholder="Subject"/></br>
-            <input type="name" class="rounded input-9 ae-6 fromCenter" name="confirm-password" placeholder="Grade"/></br></br>
+            <input type="name" class="rounded input-9 ae-4 fromCenter" name="name" placeholder="Name"/></br>
+            <input type="name" class="rounded input-9 ae-5 fromCenter" name="subject" placeholder="Subject"/></br>
+            <input type="name" class="rounded input-9 ae-6 fromCenter" name="grade" placeholder="Grade"/></br></br>
             <button type="submit" class="button blue rounded button-9 ae-7 fromCenter" name="button">Get Started</button>
-          </form>
+          </form></br>
           <p class="large ae-3"><span class="opacity-8">Are you a tutor? Click <a href="#"><b>here</b></a></span></p>
         </div>
 
@@ -62,21 +59,22 @@
   <div class="background" style="background-image:url(static/assets/img/background/bg.jpg)"></div>
 </section>
 
-<!-- Popup Video -->
-<div class="popup autoplay" data-popup-id="9">
-  <div class="close"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg></div>
-  <div class="content">
-    <div class="container">
-      <div class="wrap">
-        <div class="fix-10-12">
-          <div class="embedVideo popupContent shadow rounded">
-            <iframe data-src="https://www.youtube.com/embed/g8yBqxTiHSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
+<nav class="panel bottom forceMobileView">
+  <div class="sections desktop">
+    <div class="left"></div>
+    <div class="center">
+      <ul class="menu uppercase">'
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Tutors</a></li>
+      </ul>
     </div>
+    <div class="right"><span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span></div>
   </div>
-</div>
+  <div class="sections compact hidden">
+    <div class="right"><span data-dropdown-id="2" class="button actionButton dropdownTrigger"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#share"></use></svg></span></div>
+  </div>
+</nav>
 
 
 <!-- jQuery 3.5.1 -->
