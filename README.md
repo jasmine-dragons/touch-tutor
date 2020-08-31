@@ -1,6 +1,6 @@
 # [Touch Tutor](https://touchtutor.herokuapp.com/)
 
-![Website](static/assets/img/homepage.png)
+![Website](github.com/touch-tutor/touch-tutor/static/assets/img/homepage.png)
 
 Today, distanced learning increases the disconnect between students and tutors by a lot. Students find it harder to find a tutor and tutors find it harder to find a student. To solve this, we created Touch Tutor. In order to get help, students simply search by subject, grade, and location, allowing our algorithm to determine the closest tutor that matches their criteria best. On the contrary, tutors can use this platform to augment their personal services by creating their personal profile and reaching an untapped, local user base. Once our algorithm matches a student and tutor, the transactions take place within Touch Tutor, providing privacy and security for both parties.
 
