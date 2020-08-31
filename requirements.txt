@@ -1,0 +1,10 @@
+flask
+flask-heroku
+gunicorn
+pymongo
+dnspython
+pymongo[srv]
+numpy
+pandas
+scikit-learn
+bcrypt
