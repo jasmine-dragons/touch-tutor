@@ -3,8 +3,6 @@
 Today, distanced learning increases the disconnect between students and tutors by a lot. Students find it harder to find a tutor and tutors find it harder to find a student. To solve this, we created Touch Tutor. In order to get help, students simply search by subject, grade, and location, allowing our algorithm to determine the closest tutor that matches their criteria best. On the contrary, tutors can use this platform to augment their personal services by creating their personal profile and reaching an untapped, local user base. Once our algorithm matches a student and tutor, the transactions take place within Touch Tutor, providing privacy and security for both parties.
 
 ![Website](static/assets/img/homepage.PNG)
-
-
 ## Problem Description
 In today's current state of pandemic, interactive educational experiences are at an all time low. Not only do students struggle to keep up with the demands of the curriculum, but faculty also experience difficulties in optimizing course content for an online environment. 
 Nearly 67% percent of students feel that synchronous learning is not helpful, 60% of faculty believe that academic dishonesty is more prevalent, and the main concern of parents is the lack of collaborative learning. There is no doubt that a great disconnect between students, teachers, and the academic curriculum is ever present in our world today. Without consistent interaction between students and teachers, the educational system will continue to fall behind its own standards, stimulating an aftershock of halted innovation for years to come.
@@ -38,3 +36,6 @@ Your machine will need flask, pymongo, dns, json, and bson to run this code. To 
 
 ## Website
 Visit [touchtutor.herokuapp.com](https://touchtutor.herokuapp.com/) to view the site.
+
+## Video
+To view our in-depth demo, click [here](https://youtu.be/wJU0ULyFOgo)
