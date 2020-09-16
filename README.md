@@ -30,6 +30,10 @@ Your machine will need flask, pymongo, dns, json, and bson to run this code. To 
 3. Then download the github repo to your computer
 4. Locate the repo in your file explorer
    -- Open command prompt from that folder's search bar by typing cmd into it
+5. Create a `.env` file with the information below, and replace `{YOUR_MONGO_URI}` with your MongoDB URI.
+```
+MONGO_URI={YOUR_MONGO_URI}
+```
 5. Then enter `flask run` in the command prompt
 6. Copy the localhost link that is outputted and paste it into a web browser
 7. Use the application in your browser
